@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义checkbox， radio样式</title>
+    <link rel="stylesheet" href="./css/font-awesome.min.css">
+    <style>
+        input{
+            display: none !important;
+        }
+
+        label {
+            height: 20px;
+            line-height: 20px;
+            font-family: 'FontAwesome',serif;
+            display: flex;
+            align-content: center;
+        }
+        label::after {
+            content: '';
+            width: 16px;
+            height: 16px;
+            line-height: 16px;
+            border: 1px solid #cccccc;
+        }
+        label.sex::after {
+            border-radius: 8px;
+        }
+
+        .radio:checked + label.sex::after {
+            content: '\f111';
+            font-size:12px;
+            line-height: 18px;
+            text-align: center;
+            border: 1px solid #E8001C;
+            color: #E8001C;
+        }
+
+        .checkbox:checked + label.ball::after {
+            content: '\f00c';
+            font-size:12px;
+            line-height: 18px;
+            text-align: center;
+            border: 1px solid #E8001C;
+            color: #E8001C;
+        }
+
+    </style>
+</head>
+<body>
+    <form action="" method="post">
+
+        <input type="radio" class="radio" id="male" name="sex" />
+        <label for="male" class="sex">Male</label>
+
+        <br />
+
+        <input type="radio" class="radio" id="female" name="sex" />
+        <label for="female" class="sex">Female</label>
+
+        <br />
+        <br />
+        <br />
+        <br />
+
+        <input type="checkbox" class="checkbox" id="football" name="football" />
+        <label for="football" class="ball">Football</label>
+
+        <br />
+
+        <input type="checkbox" class="checkbox" id="basketball" name="football" />
+        <label for="basketball" class="ball">Basketball</label>
+
+
+
+        <input type="submit" />
+    </form>
+</body>
+</html>
